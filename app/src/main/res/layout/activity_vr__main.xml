@@ -18,7 +18,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_centerHorizontal="true" >
 
-                        <com.google.vr.sdk.widgets.video.VrVideoView
+                        <!--suppress AndroidDomInspection -->
+                    <com.google.vr.sdk.widgets.video.VrVideoView
                             android:id="@+id/video_view"
                             android:layout_width="match_parent"
                             android:scrollbars="@null"

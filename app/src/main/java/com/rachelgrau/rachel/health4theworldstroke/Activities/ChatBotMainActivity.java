@@ -41,11 +41,19 @@ public class ChatBotMainActivity extends AppCompatActivity implements AIListener
 
     private boolean rightSide = true; //true if you want message on right rightSide
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_bot_main);
+init();
 
+
+
+        }
+
+    private void init() {
         String feeling=getIntent().getStringExtra("Feeling");
 
         option1=(TextView) findViewById(R.id.option1);
@@ -74,49 +82,58 @@ public class ChatBotMainActivity extends AppCompatActivity implements AIListener
         aiService = AIService.getService(this, config);
         aiService.setListener(this);
         send(feeling);
+    }
 
-        }
-
-        public void send(String the_msg) {
+    public void send(String the_msg) {
+            try {
                 //String the_msg=chatText.getText().toString();
-            if(the_msg.equals("Awesome") || the_msg.equals("Happy") || the_msg.equals("Normal") ||
-                    the_msg.equals("Sad") || the_msg.equals("Very Sad")){
-                if(the_msg.equals("Awesome") || the_msg.equals("Happy")){
-                    changeText(1);
+
+                if (the_msg.equals("Awesome") || the_msg.equals("Happy") || the_msg.equals("Normal") ||
+                        the_msg.equals("Sad") || the_msg.equals("Very Sad")) {
+                    if (the_msg.equals("Awesome") || the_msg.equals("Happy")) {
+                        changeText(1);
+                    }
+                } else {
+                    sendChatMessage(the_msg);
                 }
-            }else{
-                sendChatMessage(the_msg);
-            }
                 AIRequest aiRequest = new AIRequest();
                 aiRequest.setQuery(the_msg);
 
-                if(aiRequest.equals("")) {
+                if (aiRequest.equals("")) {
                     throw new IllegalArgumentException("aiRequest must be not null");
                 }
                 @SuppressLint("StaticFieldLeak") final AsyncTask<AIRequest, Integer, AIResponse> task = new AsyncTask<AIRequest, Integer, AIResponse>() {
-                            private AIError aiError;
-                            @Override
-                            protected AIResponse doInBackground(final AIRequest... params) {
-                                final AIRequest request = params[0];
-                                try {
-                                    // Return response
-                                    return aiDataService.request(request);
-                                } catch (final AIServiceException e) {
-                                    aiError = new AIError(e);
-                                    return null;
-                                }
-                            }
-                            @Override
-                            protected void onPostExecute(final AIResponse response) {
-                                if (response != null) {
-                                    onResult(response);
-                                } else {
-                                    onError(aiError);
-                                }
-                            }
-                        };
+                    private AIError aiError;
+
+                    @Override
+                    protected AIResponse doInBackground(final AIRequest... params) {
+                        final AIRequest request = params[0];
+                        try {
+                            // Return response
+                            return aiDataService.request(request);
+                        } catch (final AIServiceException e) {
+                            aiError = new AIError(e);
+                            return null;
+                        }
+                    }
+
+                    @Override
+                    protected void onPostExecute(final AIResponse response) {
+                        if (response != null) {
+                            onResult(response);
+                        } else {
+                            onError(aiError);
+                        }
+                    }
+                };
                 task.execute(aiRequest);
             }
+            catch (Exception e )
+            {
+                Log.e("EXcdeption", e.toString());
+            }
+        }
+
 
             @Override
             public void onResult(final AIResponse response) {

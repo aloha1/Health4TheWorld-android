@@ -79,6 +79,71 @@ public class videoPlayer extends AppCompatActivity {
             String path = "android.resource://" + getPackageName() + "/" + R.raw.sit_and_stand;
             view.setVideoURI(Uri.parse(path));
         }
+        if (name.equals(getResources().getString(R.string.L2_1)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.img_3561;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if (name.equals(getResources().getString(R.string.L2_2)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.img_3562;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if (name.equals(getResources().getString(R.string.L2_3)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.img_3563;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if(name.equals(getResources().getString(R.string.L2_4)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.img_3565;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if(name.equals(getResources().getString(R.string.L3_1)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.img_3710;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if(name.equals(getResources().getString(R.string.L3_2)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.can_exerices_img_3711;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if(name.equals(getResources().getString(R.string.L3_3)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.img_3712;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if(name.equals(getResources().getString(R.string.L3_4)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.can_exerices_img_3713;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if(name.equals(getResources().getString(R.string.L3_5)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.img_3714;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if(name.equals(getResources().getString(R.string.L3_6)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.img_3566;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if(name.equals(getResources().getString(R.string.L3_7)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.img_3567;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if(name.equals(getResources().getString(R.string.L4_1)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.img_3569;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if(name.equals(getResources().getString(R.string.L4_2)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.img_3720;
+            view.setVideoURI(Uri.parse(path));
+        }
             view.start();
             view.setMediaController(controller);
             view.setOnPreparedListener (new MediaPlayer.OnPreparedListener() {

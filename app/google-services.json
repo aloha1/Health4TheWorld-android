@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "489590687729",
+    "firebase_url": "https://h4tw-ded55.firebaseio.com",
+    "project_id": "h4tw-ded55",
+    "storage_bucket": "h4tw-ded55.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489590687729:android:67c853b498e7cba2",
+        "android_client_info": {
+          "package_name": "com.rachelgrau.rachel.health4theworldstroke"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "489590687729-j8qumk119s2otfgp1rkmfv63tk4if8r9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxsc-FTMEjNjcSLE2tyGIQJlcv1U24PQE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

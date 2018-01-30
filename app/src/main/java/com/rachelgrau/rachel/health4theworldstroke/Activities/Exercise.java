@@ -55,6 +55,11 @@ public class Exercise extends AppCompatActivity {
 
     public void onClick(View v) {
 
+        if (v.getId() == R.id.ll_newexercise) {
+            Intent intent = new Intent(this, ARM_ExerciseOption.class);
+            intent.putExtra(option_data, getString(R.string.new_exercise));
+            startActivity(intent);
+        }
         if (v.getId() == R.id.ll_strength) {
             Intent intent = new Intent(this, ExerciseOption.class);
             intent.putExtra(option_data, getString(R.string.Strengthening));

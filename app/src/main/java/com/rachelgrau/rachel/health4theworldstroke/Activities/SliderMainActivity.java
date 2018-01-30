@@ -131,6 +131,8 @@ public class SliderMainActivity extends FragmentActivity {
         spinner.setAdapter(adapter);
     }
 
+
+
     public void setLocale(String lang) {
 
         myLocale = new Locale(lang);

@@ -285,4 +285,56 @@
     <string name="videoText">"Please repeat 10 times, once every day with assistance from family caregiver if needed. Consult your medical provider before starting the exercise program"</string>
     <string name="doctor_greeting">Hi! How are you feeling today?</string>
     <string name="here_are_some_general_instructions">Here are some general instructions</string>
+
+    <string name="new_exercise">New Exercises</string>
+    <string name="arm">ARM</string>
+    <string name="balance">Balance Training</string>
+    <string name="Functional">Functional Mobility</string>
+    <string name="arm_ex">ARM Exercise</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="func_mob_txt">Functional Mobility Text</string>
+    <!-- ARM Levels-->
+    <string name="L_1">Level 1</string>
+
+    <string name="L_2">Level 2</string>
+    <!--<string name="L2_1">"3561"</string>
+    <string name="L2_2">"3562"</string>
+    <string name="L2_3">"3563"</string>
+    <string name="L2_4">"3565"</string>-->
+    <string name="L2_1">Level2_1</string>
+    <string name="L2_2">Level2_2</string>
+    <string name="L2_3">Level2_3</string>
+    <string name="L2_4">Level2_4</string>
+
+    <string name="L_3">"Level 3"</string>
+   <!-- <string name="L3_1">"3710"</string>
+    <string name="L3_2">3711</string>
+    <string name="L3_3">3712</string>
+    <string name="L3_4">3713</string>
+    <string name="L3_5">3714</string>
+    <string name="L3_6">3566</string>
+    <string name="L3_7">3567</string>-->
+    <string name="L3_1">Level3_1</string>
+    <string name="L3_2">Level3_2</string>
+    <string name="L3_3">Level3_3</string>
+    <string name="L3_4">Level3_4</string>
+    <string name="L3_5">Level3_5</string>
+    <string name="L3_6">Level3_6</string>
+    <string name="L3_7">Level3_7</string>
+
+    <string name="L_4">"Level 4"</string>
+   <!-- <string name="L4_1">3569</string>
+    <string name="L4_2">3720</string>-->
+    <string name="L4_1">Level4_1</string>
+    <string name="L4_2">Level4_2</string>
+
+    <string name="Level1">"Level 1 : No Voluntary Movement"</string>
+    <string name="Level2">Level 2: Some Arm Movement against gravity but not hand</string>
+    <string name="Level3">Level 3: Gross grasp and release</string>
+    <string name="Level4">Level 4: Precision grasp</string>
+    <string name="title_activity_new_exercise">NewExerciseActivity</string>
+
+
 </resources>

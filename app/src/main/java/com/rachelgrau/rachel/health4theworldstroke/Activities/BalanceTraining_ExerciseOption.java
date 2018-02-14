@@ -6,30 +6,26 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
-
 
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.rachelgrau.rachel.health4theworldstroke.R;
 
-import static com.rachelgrau.rachel.health4theworldstroke.Activities.BalanceTraining_ExerciseOption.sub_data;
-import static com.rachelgrau.rachel.health4theworldstroke.Activities.ImageActivity.imageName;
-import static com.rachelgrau.rachel.health4theworldstroke.Activities.illustrations.illName;
 import static com.rachelgrau.rachel.health4theworldstroke.Activities.videoPlayer.videoName;
+import static com.rachelgrau.rachel.health4theworldstroke.Activities.ImageActivity.imageName;
 
 /**
  * Created by Amit on 1/4/2018.
  */
 
-public class ARM_ExerciseOption extends AppCompatActivity{
+public class BalanceTraining_ExerciseOption extends AppCompatActivity{
     String option_data= "";
+    public static String sub_data ="";
     TextView txt;
     private FirebaseAnalytics firebaseAnalytics;
     Bundle bundle;
@@ -59,7 +55,7 @@ public class ARM_ExerciseOption extends AppCompatActivity{
     }
 
     private void init() {
-        option_data = getIntent().getStringExtra(option_data);
+        option_data = getIntent().getStringExtra(sub_data);
         setUpToolbar();
         changer(option_data);
     }
@@ -109,6 +105,18 @@ public class ARM_ExerciseOption extends AppCompatActivity{
         if (name.equals(getString(R.string.sitting_and_leaning_in_different_directions))) {
             addXml(3);
             textChanger(711);
+        }
+        if (name.equals(getString(R.string.standing_practice))) {
+            addXml(1);
+            textChanger(721);
+        }
+        if (name.equals(getString(R.string.standing_and_shifting_weight_side_to_side))) {
+            addXml(1);
+            textChanger(722);
+        }
+        if (name.equals(getString(R.string.step_tap))) {
+            addXml(1);
+            textChanger(723);
         }
     }
 
@@ -269,6 +277,34 @@ public class ARM_ExerciseOption extends AppCompatActivity{
                 OptionTV2.setText(getString(R.string.video_3572));
                 OptionIV1.setImageResource(R.drawable.video_3571);
                 OptionIV2.setImageResource(R.drawable.video_3572);
+                ll3.setVisibility(View.GONE);
+                ll4.setVisibility(View.GONE);
+                break;
+            case 721:
+                OptionTV1.setText(getString(R.string.standing_3729));
+                OptionTV2.setText(getString(R.string.standing_3730));
+                OptionTV3.setText(getString(R.string.standing_3731));
+                OptionTV4.setText(getString(R.string.standing_3732));
+                OptionIV1.setImageResource(R.drawable.standing_3729);
+                OptionIV2.setImageResource(R.drawable.standing_3730);
+                OptionIV3.setImageResource(R.drawable.standing_3731);
+                OptionIV4.setImageResource(R.drawable.standing_3732);
+                break;
+            case 722:
+                OptionTV1.setText(getString(R.string.video_3574));
+                OptionTV2.setText(getString(R.string.video_3580));
+                OptionIV1.setImageResource(R.drawable.video_3574);
+                OptionIV2.setImageResource(R.drawable.video_3580);
+                ll3.setVisibility(View.GONE);
+                ll4.setVisibility(View.GONE);
+                break;
+            case 723:
+                OptionTV1.setText(getString(R.string.video_3575));
+                OptionTV2.setText(getString(R.string.video_3576));
+                OptionTV3.setText(getString(R.string.video_3578));
+                OptionIV1.setImageResource(R.drawable.video_3575);
+                OptionIV2.setImageResource(R.drawable.video_3576);
+                OptionIV3.setImageResource(R.drawable.video_3578);
                 ll4.setVisibility(View.GONE);
                 break;
         }
@@ -312,164 +348,6 @@ public class ARM_ExerciseOption extends AppCompatActivity{
 //            Toast.makeText(this, "Balance Training", Toast.LENGTH_SHORT).show();
         }
 
-      /*  *//*for streching*//*
-
-        if (v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.Leg_Feet))) {
-            Intent intent = new Intent(this, ExerciseOption.class);
-            intent.putExtra(option_data, getString(R.string.Leg_Feet));
-            startActivity(intent);
-        }
-        if (v.getId() == R.id.option2 && OptionTV2.getText().equals(getString(R.string.Arms_Hands))) {
-            Intent intent = new Intent(this, ExerciseOption.class);
-            intent.putExtra(option_data, getString(R.string.Arms_Hands));
-            startActivity(intent);
-        }*/
-
-         /*video Level-2*/
-        if (v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.L2_1))) {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.L2_1));
-            startActivity(intent);
-        }
-        if (v.getId() == R.id.option2 && OptionTV2.getText().equals(getString(R.string.L2_2))) {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.L2_2));
-            startActivity(intent);
-        }
-        if (v.getId() == R.id.option3 && OptionTV3.getText().equals(getString(R.string.L2_3))) {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.L2_3));
-            startActivity(intent);
-        }
-        if (v.getId() == R.id.option4 && OptionTV4.getText().equals(getString(R.string.L2_4))) {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.L2_4));
-            startActivity(intent);
-        }
-//        Video Level 3
-        if(v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.L3_1)))
-        {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.L3_1));
-            startActivity(intent);
-        }
-        if(v.getId() == R.id.option2 && OptionTV2.getText().equals(getString(R.string.L3_2)))
-        {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.L3_2));
-            startActivity(intent);
-        }
-        if(v.getId() == R.id.option3 && OptionTV3.getText().equals(getString(R.string.L3_3)))
-        {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.L3_3));
-            startActivity(intent);
-        }
-        if(v.getId() == R.id.option4 && OptionTV4.getText().equals(getString(R.string.L3_4)))
-        {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.L3_4));
-            startActivity(intent);
-        }
-        if(v.getId() == R.id.option5 && OptionTV5.getText().equals(getString(R.string.L3_5)))
-        {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.L3_5));
-            startActivity(intent);
-        }
-        if(v.getId() == R.id.option6 && OptionTV6.getText().equals(getString(R.string.L3_6)))
-        {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.L3_6));
-            startActivity(intent);
-        }
-        if(v.getId() == R.id.option7 && OptionTV7.getText().equals(getString(R.string.L3_7)))
-        {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.L3_7));
-            startActivity(intent);
-        }
-        /* Video Level 4
-        * */
-        if(v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.L4_1)))
-        {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.L4_1));
-            startActivity(intent);
-        }
-        if(v.getId() == R.id.option3 && OptionTV3.getText().equals(getString(R.string.L4_2)))
-        {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.L4_2));
-            startActivity(intent);
-        }
-        // end Level 4
-
-        if (v.getId() == R.id.option2 && OptionTV2.getText().equals(getString(R.string.Shoulder))) {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.Shoulder));
-            startActivity(intent);
-        }
-        if (v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.Leg_1))) {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.Leg_1));
-            startActivity(intent);
-        }
-        if (v.getId() == R.id.option2 && OptionTV2.getText().equals(getString(R.string.Leg_2))) {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.Leg_2));
-            startActivity(intent);
-        }
-
-       /* //video streching
-        if (v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.Adductores))) {
-            Intent intent = new Intent(this, illustrations.class);
-            intent.putExtra(illName, R.string.Adductores);
-            startActivity(intent);
-        }
-        if (v.getId() == R.id.option2 && OptionTV2.getText().equals(getString(R.string.Hamstrings))) {
-            Intent intent = new Intent(this, illustrations.class);
-            intent.putExtra(illName, R.string.Hamstrings);
-            startActivity(intent);
-        }
-        if (v.getId() == R.id.option3 && OptionTV3.getText().equals(getString(R.string.Dorsiflexors))) {
-            Intent intent = new Intent(this, illustrations.class);
-            intent.putExtra(illName, R.string.Dorsiflexors);
-            startActivity(intent);
-        }
-        if (v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.Hand_Stretch))) {
-            Intent intent = new Intent(this, illustrations.class);
-            intent.putExtra(illName, R.string.Hand_Stretch);
-            startActivity(intent);
-        }
-        if (v.getId() == R.id.option2 && OptionTV2.getText().equals(getString(R.string.Shoulder_Stretches))) {
-            Intent intent = new Intent(this, illustrations.class);
-            intent.putExtra(illName, R.string.Shoulder_Stretches);
-            startActivity(intent);
-        }
-        if (v.getId() == R.id.option3 && OptionTV3.getText().equals(getString(R.string.Arm_Stretch))) {
-            Intent intent = new Intent(this, illustrations.class);
-            intent.putExtra(illName, R.string.Arm_Stretch);
-            startActivity(intent);
-        }*/
-
-        /*functional mobility*/
-        if (v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.Bridge_hip))) {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.Bridge_hip));
-            startActivity(intent);
-        }
-        if (v.getId() == R.id.option2 && OptionTV2.getText().equals(getString(R.string.Arm_trunk))) {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.Arm_trunk));
-            startActivity(intent);
-        }
-        if (v.getId() == R.id.option3 && OptionTV3.getText().equals(getString(R.string.Sittostand))) {
-            Intent intent = new Intent(this, videoPlayer.class);
-            intent.putExtra(videoName, getString(R.string.Sittostand));
-            startActivity(intent);
-        }
-
          /*Balance Training*/
         if (v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.sitting_with_one_hand_support))) {
 
@@ -483,29 +361,88 @@ public class ARM_ExerciseOption extends AppCompatActivity{
             startActivity(intent);
         }
         if (v.getId() == R.id.option3 && OptionTV3.getText().equals(getString(R.string.sitting_and_leaning_in_different_directions))) {
-            Intent intent = new Intent(this, BalanceTraining_ExerciseOption.class);
-            intent.putExtra(sub_data, getString(R.string.sitting_and_leaning_in_different_directions));
+            Intent intent = new Intent(this, ARM_ExerciseOption.class);
+            intent.putExtra(option_data, getString(R.string.sitting_and_leaning_in_different_directions));
             startActivity(intent);
         }
 
-        if (v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.standing_practice))) {
-
-            Intent intent = new Intent(this, BalanceTraining_ExerciseOption.class);
-            intent.putExtra(sub_data,  getString(R.string.standing_practice));
+        /*Sitting in different directions*/
+        if (v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.video_3571))) {
+            Intent intent = new Intent(this, videoPlayer.class);
+            intent.putExtra(videoName, getString(R.string.video_3571));
             startActivity(intent);
         }
-        if (v.getId() == R.id.option2 && OptionTV2.getText().equals(getString(R.string.standing_and_shifting_weight_side_to_side))) {
-            Intent intent = new Intent(this, BalanceTraining_ExerciseOption.class);
-            intent.putExtra(sub_data,  getString(R.string.standing_and_shifting_weight_side_to_side));
-            startActivity(intent);
-        }
-        if (v.getId() == R.id.option3 && OptionTV3.getText().equals(getString(R.string.step_tap))) {
-
-            Intent intent = new Intent(this, BalanceTraining_ExerciseOption.class);
-            intent.putExtra(sub_data,  getString(R.string.step_tap));
+        if (v.getId() == R.id.option2 && OptionTV2.getText().equals(getString(R.string.video_3572))) {
+            Intent intent = new Intent(this, videoPlayer.class);
+            intent.putExtra(videoName, getString(R.string.video_3572));
             startActivity(intent);
         }
 
+        /*Standing Practice*/
+//        if (v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.standing_practice))) {
+//
+//            Intent intent = new Intent(this, BalanceTraining_ExerciseOption.class);
+//            intent.putExtra(sub_data,  getString(R.string.standing_practice));
+//            startActivity(intent);
+//        }
+//        if (v.getId() == R.id.option2 && OptionTV2.getText().equals(getString(R.string.standing_and_shifting_weight_side_to_side))) {
+//            Intent intent = new Intent(this, BalanceTraining_ExerciseOption.class);
+//            intent.putExtra(sub_data,  getString(R.string.standing_and_shifting_weight_side_to_side));
+//            startActivity(intent);
+//        }
+//        if (v.getId() == R.id.option3 && OptionTV3.getText().equals(getString(R.string.step_tap))) {
+//
+//            Intent intent = new Intent(this, BalanceTraining_ExerciseOption.class);
+//            intent.putExtra(sub_data,  getString(R.string.step_tap));
+//            startActivity(intent);
+//        }
+
+        if (v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.standing_3729))) {
+            Intent intent = new Intent(this, ImageActivity.class);
+            intent.putExtra(imageName,  getString(R.string.standing_3729));
+            startActivity(intent);
+        }
+        if (v.getId() == R.id.option2 && OptionTV2.getText().equals(getString(R.string.standing_3730))) {
+            Intent intent = new Intent(this, ImageActivity.class);
+            intent.putExtra(imageName,  getString(R.string.standing_3730));
+            startActivity(intent);
+        }
+        if (v.getId() == R.id.option3 && OptionTV3.getText().equals(getString(R.string.standing_3731))) {
+            Intent intent = new Intent(this, ImageActivity.class);
+            intent.putExtra(imageName,  getString(R.string.standing_3731));
+            startActivity(intent);
+        }
+        if (v.getId() == R.id.option4 && OptionTV4.getText().equals(getString(R.string.standing_3732))) {
+            Intent intent = new Intent(this, ImageActivity.class);
+            intent.putExtra(imageName,  getString(R.string.standing_3732));
+            startActivity(intent);
+        }
+
+        if (v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.video_3574))) {
+            Intent intent = new Intent(this, videoPlayer.class);
+            intent.putExtra(videoName,  getString(R.string.video_3574));
+            startActivity(intent);
+        }
+        if (v.getId() == R.id.option2 && OptionTV2.getText().equals(getString(R.string.video_3580))) {
+            Intent intent = new Intent(this, videoPlayer.class);
+            intent.putExtra(videoName,  getString(R.string.video_3580));
+            startActivity(intent);
+        }
+        if (v.getId() == R.id.option1 && OptionTV1.getText().equals(getString(R.string.video_3575))) {
+            Intent intent = new Intent(this, videoPlayer.class);
+            intent.putExtra(videoName,  getString(R.string.video_3575));
+            startActivity(intent);
+        }
+        if (v.getId() == R.id.option2 && OptionTV2.getText().equals(getString(R.string.video_3576))) {
+            Intent intent = new Intent(this, videoPlayer.class);
+            intent.putExtra(videoName,  getString(R.string.video_3576));
+            startActivity(intent);
+        }
+        if (v.getId() == R.id.option3 && OptionTV3.getText().equals(getString(R.string.video_3578))) {
+            Intent intent = new Intent(this, videoPlayer.class);
+            intent.putExtra(videoName,  getString(R.string.video_3578));
+            startActivity(intent);
+        }
     }
     public void addXml(int info) {
         if (info == 1) {

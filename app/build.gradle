@@ -47,5 +47,4 @@ dependencies {
     apply plugin: 'com.google.gms.google-services'
     compile 'com.google.firebase:firebase-core:11.8.0'
     testCompile 'junit:junit:4.12'
-    compile 'me.relex:circleindicator:1.2.2@aar'
 }

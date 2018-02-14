@@ -39,6 +39,7 @@
         <activity android:name=".Activities.surveyView" />
         <activity android:name=".Activities.Exercise" />
         <activity android:name=".Activities.videoPlayer" />
+        <activity android:name=".Activities.ImageActivity"/>
         <activity android:name=".Activities.illustrations" />
         <activity android:name=".Activities.password_gateway" />
         <activity android:name=".Activities.VR_MainActivity">
@@ -63,6 +64,9 @@
         <activity android:name=".Activities.music_player" />
         <activity android:name=".Activities.chatBotQuotes" />
         <activity android:name=".Activities.ARM_ExerciseOption" />
+        <activity android:name=".Activities.BalanceTraining_ExerciseOption"/>
+        <activity android:name=".Activities.FunctionMobilityActivity" />
+        <activity android:name=".Activities.BalanceTrainingActivity" />
         <activity
             android:name=".Activities.ARMExerciseActivity"
 

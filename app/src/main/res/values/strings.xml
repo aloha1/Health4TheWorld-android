@@ -1,17 +1,17 @@
 <resources>
     <string name="app_name">Health 4 The World Stroke</string>
-    <string name="quote_text1">\"The best preparation for tomorrow is doing your best today.\"</string>
-    <string name="quote_author1">-H.jackson Brown, Jr</string>
-    <string name="quote_text2">\"Believe you can and you\'re halfway there.\"</string>
-    <string name="quote_author2">-Theodore Roosevelt</string>
-    <string name="quote_text3">\"Nothing is impossible, the word itself says \'I\'m possible\'!\"</string>
-    <string name="quote_author3">-Audrey Hepburn</string>
-    <string name="quote_text4">\"Only I can change my life.No one can do it for me.\"</string>
-    <string name="quote_author4">-Carol Burnett</string>
-    <string name="quote_text5">\"Always do your best. What you plant now will harvest later.\"</string>
-    <string name="quote_author5">-Og Mandino</string>
-    <string name="quote_text6">\"Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.\"</string>
-    <string name="quote_author6">-Helen Keller</string>
+    <string name="lauch_text1">\"The best preparation for tomorrow is doing your best today.\"</string>
+    <string name="author1">-H.jackson Brown, Jr</string>
+    <string name="launch_text2">\"Believe you can and you\'re halfway there.\"</string>
+    <string name="author2">-Theodore Roosevelt</string>
+    <string name="launch_text3">\"Nothing is impossible, the word itself says \'I\'m possible\'!\"</string>
+    <string name="author3">-Audrey Hepburn</string>
+    <string name="launch_text4">\"Only I can change my life.No one can do it for me.\"</string>
+    <string name="author4">-Carol Burnett</string>
+    <string name="launch_text5">\"Always do your best. What you plant now will harvest later.\"</string>
+    <string name="author5">-Og Mandino</string>
+    <string name="launch_text6">\"Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.\"</string>
+    <string name="author6">-Helen Keller</string>
     <string name="home">HOME</string>
     <string name="general_info">General Information</string>
     <string name="mobile_intro">Mobile App Introduction</string>
@@ -80,6 +80,7 @@
     <string name="Arm_Stretch_text">Lie on your side with the involved side up and arm resting on hip. Gently bring the lower arm towards the leg. Hold for 30 seconds. Repeat 3 times. Make sure that you hold the shoulder and stop it from moving forward.</string>
     <string name="Function_Mobility">Function Mobility</string>
     <string name="Bridge_hip">Bridge hip</string>
+
     <string name="Arm_trunk">Arm + trunk</string>
     <string name="Sittostand">Sit to stand</string>
     <string name="Mind_exercise">Mind exercise</string>
@@ -291,7 +292,31 @@
     <string name="balance">Balance Training</string>
     <string name="Functional">Functional Mobility</string>
     <string name="arm_ex">ARM Exercise</string>
-
+    <string name="Roll_in_bed">Roll in bed</string>
+    <string name="Roll_out_of_bed">Roll out of bed</string>
+    <string name="Sitting">Sitting</string>
+    <string name="Standing">Standing</string>
+    <string name="sitting_with_one_hand_support">Sitting with one hand support</string>
+    <string name="sitting_with_no_hand_support">Sitting with ono hand support</string>
+    <string name="sitting_and_leaning_in_different_directions">Sitting and leaning in different</string>
+    <string name="standing_practice">Standing Practice</string>
+    <string name="standing_and_shifting_weight_side_to_side">Standing and Shfting weight</string>
+    <string name="step_tap">Step tap</string>
+    <string name="standing_3729">I</string>
+    <string name="standing_3730">II</string>
+    <string name="standing_3731">III</string>
+    <string name="standing_3732">IV</string>
+    <string name="video_3561">3561</string>
+    <string name="video_3562">3562</string>
+    <string name="video_3563">3563</string>
+    <string name="video_3565">3565</string>
+    <string name="video_3571">1</string>
+    <string name="video_3572">2</string>
+    <string name="video_3574">One</string>
+    <string name="video_3575">A</string>
+    <string name="video_3576">B</string>
+    <string name="video_3578">C</string>
+    <string name="video_3580">Two</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="func_mob_txt">Functional Mobility Text</string>

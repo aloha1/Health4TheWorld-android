@@ -66,6 +66,7 @@ public class ExerciseOption extends AppCompatActivity {
             addXml(1);
             textChanger(3);
         }
+
     }
 
     public void textChanger(int n) {
@@ -158,6 +159,7 @@ public class ExerciseOption extends AppCompatActivity {
                 OptionIV3.setImageResource(R.drawable.sit_to_stand);
                 ll4.setVisibility(View.GONE);
                 break;
+
         }
     }
 

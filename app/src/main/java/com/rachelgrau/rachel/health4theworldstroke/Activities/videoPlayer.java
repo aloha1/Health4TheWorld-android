@@ -144,6 +144,60 @@ public class videoPlayer extends AppCompatActivity {
             String path = "android.resource://" + getPackageName() + "/" + R.raw.img_3720;
             view.setVideoURI(Uri.parse(path));
         }
+        if(name.equals(getResources().getString(R.string.Roll_in_bed)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.roll_in_bed;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if(name.equals(getResources().getString(R.string.Roll_out_of_bed)))
+        {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.roll_out_of_bed;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if (name.equals(getString(R.string.video_3561))) {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.video_3561;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if (name.equals(getString(R.string.video_3562))) {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.video_3562;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if (name.equals(getString(R.string.video_3563))) {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.video_3563;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if (name.equals(getString(R.string.video_3565))) {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.video_3565;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if (name.equals(getString(R.string.video_3571))) {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.video_3571;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if (name.equals(getString(R.string.video_3572))) {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.video_3572;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if (name.equals(getString(R.string.video_3574))) {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.video_3574;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if (name.equals(getString(R.string.video_3575))) {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.video_3575;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if (name.equals(getString(R.string.video_3576))) {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.video_3576;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if (name.equals(getString(R.string.video_3578))) {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.video_3578;
+            view.setVideoURI(Uri.parse(path));
+        }
+        if (name.equals(getString(R.string.video_3580))) {
+            String path = "android.resource://" + getPackageName() + "/" + R.raw.video_3580;
+            view.setVideoURI(Uri.parse(path));
+        }
             view.start();
             view.setMediaController(controller);
             view.setOnPreparedListener (new MediaPlayer.OnPreparedListener() {

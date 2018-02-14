@@ -25,11 +25,6 @@
             android:textSize="25sp" />
     </android.support.v7.widget.Toolbar>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Keep Arms at shoulder level or below"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -57,7 +52,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/round_corner"
                     android:gravity="center_vertical|center_horizontal"
-                    android:text="@string/L_1"
+                    android:text="@string/Sitting"
                     android:textColor="@color/colorWhite"
                     android:textSize="20sp" />
 
@@ -68,7 +63,7 @@
                     android:layout_margin="5dp"
                     android:background="@drawable/border_background"
                     android:padding="5dp"
-                    android:src="@drawable/elbow" />
+                    android:src="@drawable/sit_to_stand" />
             </LinearLayout>
 
             <LinearLayout
@@ -91,7 +86,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/round_corner"
                     android:gravity="center_vertical|center_horizontal"
-                    android:text="@string/L_3"
+                    android:text="@string/Standing"
                     android:textColor="@color/colorWhite"
                     android:textSize="20sp" />
 
@@ -102,7 +97,7 @@
                     android:layout_margin="5dp"
                     android:background="@drawable/border_background"
                     android:padding="5dp"
-                    android:src="@drawable/shoulder" />
+                    android:src="@drawable/arm_trunk" />
             </LinearLayout>
 
     </LinearLayout>

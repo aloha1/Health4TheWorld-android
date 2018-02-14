@@ -165,7 +165,7 @@ public class MainActivity2 extends AppCompatActivity implements View.OnClickList
         {
             bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Rating Button Click");
 
-            if(setRating!=true)
+            if(!setRating)
             {
                 FooterActivity cdd = new FooterActivity(this);
                 cdd.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));

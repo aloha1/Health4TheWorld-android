@@ -43,6 +43,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -50,7 +51,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:adjustViewBounds="true"
-                        android:padding="8dp"
+                        android:padding="2dp"
                         android:src="@drawable/doctor_rsz" />
 
                     <TextView
@@ -80,7 +81,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:onClick="onClick"
-                        android:padding="8dp"
                         android:src="@drawable/feeling_1" />
 
                     <ImageView
@@ -89,7 +89,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:onClick="onClick"
-                        android:padding="8dp"
                         android:src="@drawable/feeling_2" />
 
                     <ImageView
@@ -98,7 +97,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:onClick="onClick"
-                        android:padding="8dp"
                         android:src="@drawable/feeling_3" />
 
                     <ImageView
@@ -107,7 +105,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:onClick="onClick"
-                        android:padding="8dp"
                         android:src="@drawable/feeling_4" />
 
                     <ImageView
@@ -116,7 +113,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:onClick="onClick"
-                        android:padding="8dp"
                         android:src="@drawable/feeling_5" />
 
                 </LinearLayout>

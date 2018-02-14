@@ -4,66 +4,57 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.rachelgrau.rachel.health4theworldstroke.Adapters.ScreenSlidePageFragment2;
-import com.rachelgrau.rachel.health4theworldstroke.Adapters.ScreenSlidePageFragment3;
-import com.rachelgrau.rachel.health4theworldstroke.Adapters.ScreenSlidePageFragment4;
-import com.rachelgrau.rachel.health4theworldstroke.Adapters.ScreenSlidePageFragment5;
-import com.rachelgrau.rachel.health4theworldstroke.Adapters.ScreenSlidePageFragment6;
+import com.rachelgrau.rachel.health4theworldstroke.Adapters.TextSliderAdapter;
 import com.rachelgrau.rachel.health4theworldstroke.R;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
+
+import me.relex.circleindicator.CircleIndicator;
 
 
-public class SliderMainActivity extends FragmentActivity {
+public class SliderMainActivity extends AppCompatActivity {
 
+    private static ViewPager mPager;
+    private static int currentPage = 0;
+    private static final Integer[] quote = //list of all quots
+            {R.string.quote_text1, R.string.quote_text2, R.string.quote_text3, R.string.quote_text4, R.string.quote_text5, R.string.quote_text6};
+    private static final Integer[] author = //name of authors corresponding quots
+            {R.string.quote_author1, R.string.quote_author2, R.string.quote_author3, R.string.quote_author4, R.string.quote_author5, R.string.quote_author6};
+    private ArrayList<Integer> XMENArray = new ArrayList<Integer>();
+    private ArrayList<Integer> XMENArray2 = new ArrayList<Integer>();
     Spinner spinner;
     String language, lang_selected;
     static String current_lang = "";
     Locale myLocale;
-    /**
-     * The number of pages.
-     */
-    private static final int NUM_PAGES = 6;
-    /**
-     * The pager widget, which handles animation and allows swiping horizontally to access previous
-     * and next wizard steps.
-     */
-    private ViewPager mPager;
-    /**
-     * The pager adapter, which provides the pages to the view pager widget.
-     */
+    private ArrayList<Integer> quote_array = new ArrayList<>();
+    private ArrayList<Integer> author_array = new ArrayList<>();
+
     PagerAdapter mPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slider_main);
-
+        init();
         lang_selected = getIntent().getStringExtra(current_lang);
         spinner = (Spinner) findViewById(R.id.spinner);
-
-        // Instantiate a ViewPager and a PagerAdapter.
-        mPager = (ViewPager) findViewById(R.id.viewPager);
-        mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
-        mPager.setAdapter(mPagerAdapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -131,8 +122,6 @@ public class SliderMainActivity extends FragmentActivity {
         spinner.setAdapter(adapter);
     }
 
-
-
     public void setLocale(String lang) {
 
         myLocale = new Locale(lang);
@@ -144,44 +133,6 @@ public class SliderMainActivity extends FragmentActivity {
         Intent refresh = new Intent(this, SliderMainActivity.class);
         startActivity(refresh);
     }
-
-    /**
-     * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in
-     * sequence.
-     */
-    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
-        private ScreenSlidePagerAdapter(FragmentManager fm) {
-            super(fm);
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-            if (position == 0) {
-                return new ScreenSlidePageFragment();
-            }
-            if (position == 1) {
-                return new ScreenSlidePageFragment2();
-            }
-            if (position == 2) {
-                return new ScreenSlidePageFragment3();
-            }
-            if (position == 3) {
-                return new ScreenSlidePageFragment4();
-            }
-            if (position == 4) {
-                return new ScreenSlidePageFragment5();
-            }
-            if (position == 5) {
-                return new ScreenSlidePageFragment6();
-            }
-            return new ScreenSlidePageFragment();
-        }
-
-        @Override
-        public int getCount() {
-            return NUM_PAGES;
-        }
-    }
     @Override
     protected void onPause() {
         super.onPause();
@@ -191,4 +142,34 @@ public class SliderMainActivity extends FragmentActivity {
         Intent intent= new Intent(SliderMainActivity.this, MainActivity2.class);
         startActivity(intent);
     }
+
+    private void init() {
+        for (int i = 0; i < quote.length; i++) {
+            quote_array.add(quote[i]);
+            author_array.add(author[i]);
+        }
+        mPager = (ViewPager) findViewById(R.id.pager);
+        mPager.setAdapter(new TextSliderAdapter(SliderMainActivity.this, quote_array, author_array));
+        CircleIndicator indicator = (CircleIndicator) findViewById(R.id.indicator);
+        indicator.setViewPager(mPager);
+
+        // Auto start of viewpager
+        final Handler handler = new Handler();
+        final Runnable Update = new Runnable() {
+            public void run() {
+                if (currentPage == quote.length) {
+                    currentPage = 0;
+                }
+                mPager.setCurrentItem(currentPage++, true);
+            }
+        };
+        Timer swipeTimer = new Timer();
+        swipeTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                handler.post(Update);
+            }
+        }, 2500, 2500);
+    }
+
 }

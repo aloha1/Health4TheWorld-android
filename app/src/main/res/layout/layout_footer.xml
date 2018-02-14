@@ -16,26 +16,25 @@
         android:layout_marginTop="2dp"
         android:background="@color/colorWhite"
         android:orientation="horizontal"
-        android:paddingTop="5dp"
         android:weightSum="1">
 
         <Button
             android:id="@+id/Imbt_rating"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:layout_weight="0.75"
+            android:layout_weight="0.50"
             android:background="@drawable/round_corner_2"
             android:text="Rating"
             android:textColor="@color/colorWhite" />
 
         <Button
             android:id="@+id/imbt_feedback"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:layout_weight="0.25"
-            android:background="@drawable/round_corner"
+            android:layout_weight="0.50"
+            android:background="@drawable/round_corner_2"
             android:text="Do you like the app"
             android:textColor="@color/colorWhite" />
     </LinearLayout>

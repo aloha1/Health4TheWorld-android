@@ -6,7 +6,7 @@ package com.rachelgrau.rachel.health4theworldstroke;
 
 public class Utilities {
 
-    /* Returns a time string of the form "5:32PM" */
+    /* Returns a time string of the form "5:32PM"  */
     public static String getAmPmTimeString(int hr, int min) {
         boolean isAM = false;
         if (hr < 12) {

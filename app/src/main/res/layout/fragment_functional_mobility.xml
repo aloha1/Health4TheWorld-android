@@ -57,7 +57,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/round_corner"
                     android:gravity="center_vertical|center_horizontal"
-                    android:text="@string/L_1"
+                    android:text="@string/Roll_in_bed"
                     android:textColor="@color/colorWhite"
                     android:textSize="20sp" />
 
@@ -91,7 +91,7 @@
                     android:layout_marginTop="5dp"
                     android:background="@drawable/round_corner"
                     android:gravity="center_vertical|center_horizontal"
-                    android:text="@string/L_3"
+                    android:text="@string/Roll_out_of_bed"
                     android:textColor="@color/colorWhite"
                     android:textSize="20sp" />
 
